@@ -8,9 +8,8 @@ file(GLOB SOURCES CONFIGURE_DEPENDS
 	src/*.cpp 
 )
 file(GLOB HEADERS CONFIGURE_DEPENDS 
-	include/*.hpp
+	include/lsys/*.hpp
 )
-
 
 add_library(nm_lsys STATIC)
 add_library(nm::lsys ALIAS nm_lsys)
@@ -24,7 +23,7 @@ target_sources(nm_lsys
 )
 
 target_include_directories(nm_lsys
-	PUBLIC include
+	PUBLIC include/lsys
 )
 
 add_subdirectory(tests)

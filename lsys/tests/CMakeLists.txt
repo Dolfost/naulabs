@@ -12,7 +12,7 @@ foreach(T ${TESTS})
 	target_compile_definitions(${TNAME} 
 		PRIVATE TESTPATH="${CMAKE_CURRENT_LIST_DIR}"
 	)
-	target_link_libraries(${TNAME} nm_run)
+	target_link_libraries(${TNAME} nm::lsys)
 	add_test(NAME ${TNAME}
 		COMMAND ${TNAME}
 	)
