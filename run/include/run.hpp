@@ -3,10 +3,18 @@
 
 #include <vector>
 
+namespace nm::lsys {
+
 class Run {
 public:
-    std::pair<std::vector<double>,std::vector<double>> 
-			solve(std::vector<std::vector<double>>);
+	static std::vector<double> solve(
+		std::vector<double>, 
+		std::vector<double>, 
+		std::vector<double>, 
+		std::vector<double>
+	);
 };
+
+}
 
 #endif // !_RUH_HPP_
