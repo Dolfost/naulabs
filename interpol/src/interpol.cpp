@@ -1,0 +1,25 @@
+#include <cmath>
+#include <interpol/interpol.hpp>
+
+namespace nm {
+
+Interpolation::ListT Interpolation::uniformNodes(double a, double b, std::size_t n) {
+	double step = std::abs(a-b)/(n-1);
+	ListT points;
+	for (std::size_t k = 0; k < n; k++)
+		points.push_back(a + k*step);
+
+	return points;
+}
+
+Interpolation::ListT Interpolation::chebyshevNodes(double a, double b, std::size_t n) {
+	double c1 = (a+b)/2.0;
+	double c2 = (b-a)/2.0;
+	ListT points;
+	for (std::size_t k = 0; k < n; k++)
+		points.push_back(c1 + c2*std::cos(((2.0*k+1.0)/(2.0*n))*M_PI));
+
+	return points;
+}
+
+}
