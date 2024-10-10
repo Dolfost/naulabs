@@ -2,6 +2,7 @@
 #include <thomas.hpp>
 
 #include <algorithm>
+#include <cmath>
 
 namespace nm {
 
