@@ -13,16 +13,15 @@ void Cubic::setX(ListT x) {
 
 void Cubic::calculateM() {
 	ListT a(i_n - 3), b(i_n - 2), l(i_n - 2); // c = a
-	for (std::size_t i = 0; i < i_n - 3; i++) {
+	for (std::size_t i = 0; i < i_n - 3; i++)
 		a[i] = h(i+2)/6;
-	}
 
 	for (std::size_t i = 0; i < i_n - 2; i++) {
 		b[i] = (h(i+1) + h(i+2))/3;
 		l[i] = (i_y[i+2] - i_y[i+1])/h(i+1) - (i_y[i+1] - i_y[i])/h(i+1);
 	}
 
-	ListT sol = nm::lsys::Thomas::solve(a, b, a, l);
+	ListT sol = nm::lsys::Thomas::solve(a, b, a, l); // c = a
 
 	n_M.clear();
 	n_M.push_back(0);
