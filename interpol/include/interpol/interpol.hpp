@@ -28,6 +28,10 @@ public:
 		Chebyshev,
 	};
 
+	double h(std::size_t i) {
+		return i_x[i] - i_x[i-1];
+	}
+
 	static ListT uniformNodes(double, double, std::size_t);
 	static ListT chebyshevNodes(double, double, std::size_t);
 protected:
