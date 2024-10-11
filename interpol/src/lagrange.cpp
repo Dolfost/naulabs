@@ -1,4 +1,4 @@
-#include <lagrange.hpp>
+#include <interpol/lagrange.hpp>
 
 namespace nm {
 
@@ -6,7 +6,7 @@ namespace nm {
 void Lagrange
 		::setX(ListT x) {
 	Interpolation::setX(x);
-	calculateM();
+	calculateL();
 }
 
     void Lagrange::calculateL() {
