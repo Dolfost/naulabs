@@ -27,5 +27,7 @@ target_include_directories(nm_interpol
 )
 
 target_link_libraries(nm_interpol
-	PUBLIC exprtk nm::lsys
+	PUBLIC nm::lsys
 )
+
+add_subdirectory(tests)
