@@ -1,9 +1,8 @@
-#include <cmath>
-#include <interpol/interpol.hpp>
+#include <calgo/interpol/interpol.hpp>
 
 namespace ca::interpol {
 
-Interpolation::ListT Interpolation::uniformNodes(double a, double b, std::size_t n) {
+ListT Nodes::uniform(double a, double b, std::size_t n) {
 	double step = std::abs(a-b)/(n-1);
 	ListT points;
 	for (std::size_t k = 0; k < n; k++)
@@ -12,7 +11,7 @@ Interpolation::ListT Interpolation::uniformNodes(double a, double b, std::size_t
 	return points;
 }
 
-Interpolation::ListT Interpolation::chebyshevNodes(double a, double b, std::size_t n) {
+ListT Nodes::chebyshev(double a, double b, std::size_t n) {
 	double c1 = (a+b)/2.0;
 	double c2 = (b-a)/2.0;
 	ListT points;

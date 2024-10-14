@@ -1,12 +1,12 @@
-#include "thomas.hpp"
+#include "calgo/lsys/thomas.hpp"
 
 namespace ca::lsys {
 
 std::vector<double> Thomas::solve(
-	const std::vector<double>& a,
-	const std::vector<double>& b,
-	const std::vector<double>& c,
-	const std::vector<double>& d
+		const ListT& a,
+		const ListT& b,
+		const ListT& c,
+		const ListT& d
 ) {
 	std::size_t N = b.size();
 

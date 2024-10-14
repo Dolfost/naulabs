@@ -1,7 +1,7 @@
 #ifndef _CALGO_CUBIC_INTERPOL_HPP_
 #define _CALGO_CUBIC_INTERPOL_HPP_
 
-#include <interpol/interpol.hpp>
+#include <calgo/interpol/interpol.hpp>
 
 namespace ca::interpol {
 

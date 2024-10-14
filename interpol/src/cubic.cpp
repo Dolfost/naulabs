@@ -1,5 +1,5 @@
-#include <interpol/cubic.hpp>
-#include <thomas.hpp>
+#include <calgo/interpol/cubic.hpp>
+#include <calgo/lsys/thomas.hpp>
 
 #include <algorithm>
 #include <cmath>

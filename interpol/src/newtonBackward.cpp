@@ -1,4 +1,4 @@
-#include <interpol/newtonBackward.hpp>
+#include <calgo/interpol/newtonBackward.hpp>
 #include <iostream>
 
 namespace ca::interpol {

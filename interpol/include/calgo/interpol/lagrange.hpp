@@ -1,7 +1,7 @@
 #ifndef _CALGO_INTERPOL_LAGRANGE_
 #define _CALGO_INTERPOL_LAGRANGE_
 
-#include <interpol/interpol.hpp>
+#include <calgo/interpol/interpol.hpp>
 
 namespace ca::interpol {
 

@@ -12,7 +12,7 @@ foreach(T ${TESTS})
 	target_compile_definitions(interpol_${TNAME} 
 		PRIVATE TESTPATH="${CMAKE_CURRENT_LIST_DIR}"
 	)
-	target_link_libraries(interpol_${TNAME} nm::interpol)
+	target_link_libraries(interpol_${TNAME} ca::interpol)
 	add_test(NAME interpol_${TNAME}
 		COMMAND interpol_${TNAME}
 	)

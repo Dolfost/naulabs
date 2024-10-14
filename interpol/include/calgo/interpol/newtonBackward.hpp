@@ -1,7 +1,7 @@
 #ifndef _CALGO_INTERPOL_NEWTON_BACKWARD_
 #define _CALGO_INTERPOL_NEWTON_BACKWARD_
 
-#include <interpol/interpol.hpp>
+#include <calgo/interpol/interpol.hpp>
 
 namespace ca::interpol {
 

@@ -1,6 +1,7 @@
 #include <iomanip>
 #include <iostream>
-#include <interpol/interpol.hpp>
+
+#include <calgo/interpol/interpol.hpp>
 
 bool comp(
 	const std::vector<double>& a, 
@@ -19,7 +20,7 @@ bool comp(
 int main() {
 
 	std::vector<double> 
-	sol = ca::interpol::Interpolation::chebyshevNodes(0, 10, 5),
+	sol = ca::interpol::Nodes::chebyshev(0, 10, 5),
 	expect = {0.245, 2.06, 5, 7.94, 9.76};
 
 	std::cout << "expected: ";

@@ -1,13 +1,12 @@
 #ifndef _CALGO_INTERPOL_HPP_
 #define _CALGO_INTERPOL_HPP_
 
-#include <vector>
+#include <calgo/calgo.hpp>
 
 namespace ca::interpol {
 
 class Interpolation {
 public:
-	using ListT = std::vector<double>;
 	Interpolation(ListT x = {}, ListT y = {}) {
 		setX(x), setY(y);
 	}
@@ -22,21 +21,21 @@ public:
 	double operator()(double x) { return interpolate(x); };
 
 	virtual ~Interpolation() {};
-public:
-	enum class Node {
-		Uniform,
-		Chebyshev,
-	};
 
+public:
 	double h(std::size_t i) {
 		return i_x[i] - i_x[i-1];
 	}
 
-	static ListT uniformNodes(double, double, std::size_t);
-	static ListT chebyshevNodes(double, double, std::size_t);
 protected:
 	ListT i_x, i_y;
 	std::size_t i_n;
+};
+
+class Nodes {
+public:
+	static ListT uniform(double, double, std::size_t);
+	static ListT chebyshev(double, double, std::size_t);
 };
 
 }

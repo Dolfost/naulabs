@@ -8,22 +8,26 @@ file(GLOB SOURCES CONFIGURE_DEPENDS
 	src/*.cpp 
 )
 file(GLOB HEADERS CONFIGURE_DEPENDS 
-	include/lsys/*.hpp
+	include/calgo/lsys/*.hpp
 )
 
-add_library(nm_lsys STATIC)
-add_library(nm::lsys ALIAS nm_lsys)
-target_sources(nm_lsys
+add_library(ca_lsys STATIC)
+add_library(ca::lsys ALIAS ca_lsys)
+target_sources(ca_lsys
 	PUBLIC
 		${SOURCES}
-	PUBLIC FILE_SET nm_lsys_headers
+	PUBLIC FILE_SET ca_lsys_headers
 		TYPE HEADERS 
 			BASE_DIRS include/
 			FILES ${HEADERS}
 )
 
-target_include_directories(nm_lsys
-	PUBLIC include/lsys
+target_include_directories(ca_lsys
+	PUBLIC include/
+)
+
+target_link_libraries(ca_lsys
+	PUBLIC ca::calgo
 )
 
 add_subdirectory(tests)

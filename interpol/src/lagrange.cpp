@@ -1,4 +1,4 @@
-#include <interpol/lagrange.hpp>
+#include <calgo/interpol/lagrange.hpp>
 
 namespace ca::interpol {
 

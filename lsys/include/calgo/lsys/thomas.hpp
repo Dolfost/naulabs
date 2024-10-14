@@ -1,17 +1,17 @@
 #ifndef _CALGO_LSYS_THOMAS_HPP_
 #define _CALGO_LSYS_THOMAS_HPP_
 
-#include <vector>
+#include <calgo/calgo.hpp>
 
 namespace ca::lsys {
 
 class Thomas {
 public:
 	static std::vector<double> solve(
-		const std::vector<double>&, 
-		const std::vector<double>&, 
-		const std::vector<double>&, 
-		const std::vector<double>&
+		const ListT&,
+		const ListT&,
+		const ListT&,
+		const ListT&
 	);
 };
 

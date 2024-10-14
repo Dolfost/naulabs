@@ -1,6 +1,6 @@
 #include <iomanip>
 #include <iostream>
-#include <lsys/thomas.hpp>
+#include <calgo/lsys/thomas.hpp>
 
 bool comp(
 	const std::vector<double>& a, 
