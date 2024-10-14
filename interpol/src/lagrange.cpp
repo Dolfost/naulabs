@@ -1,50 +1,50 @@
 #include <interpol/lagrange.hpp>
 
-namespace nm {
+namespace ca::interpol {
 
-	
 void Lagrange
-		::setX(ListT x) {
+::setX(ListT x) {
 	Interpolation::setX(x);
 	calculateL();
 }
 
-    void Lagrange::calculateL() {
-		double res = 1.0;
+void Lagrange::calculateL() {
+	double res = 1.0;
 
-		for(int i = 0; i < i_n; i++){
+	for(int i = 0; i < i_n; i++){
 
-			for(int j = 0; j < i_n; j++){
-				if(j == i) continue;
-				else {
-					res *= (i_x[i] - i_x[j]);
-				}
+		for(int j = 0; j < i_n; j++){
+			if(j == i) continue;
+			else {
+				res *= (i_x[i] - i_x[j]);
 			}
-
-		    n_L.push_back(res);
-			res = 1.0;
 		}
 
+		n_L.push_back(res);
+		res = 1.0;
 	}
 
-   double Lagrange::interpolate(double x){
-		double sum = 0.0;
-		double res = 1.0;
+}
 
-		for(int i = 0; i < i_n; i++){
-			for(int j = 0; j < i_n; j++){
-				if(j == i) continue;
-				else {
-					res *= (x - i_x[j]);
-				}
-		    }
+double Lagrange::interpolate(double x){
+	double sum = 0.0;
+	double res = 1.0;
 
-			res *= i_y[i];
-			res /= n_L[i];
-			sum += res;
-			res = 1.0;
+	for(int i = 0; i < i_n; i++){
+		for(int j = 0; j < i_n; j++){
+			if(j == i) continue;
+			else {
+				res *= (x - i_x[j]);
+			}
 		}
-		
-		return sum;
-   }
+
+		res *= i_y[i];
+		res /= n_L[i];
+		sum += res;
+		res = 1.0;
+	}
+
+	return sum;
+}
+
 }

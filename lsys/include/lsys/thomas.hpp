@@ -1,9 +1,9 @@
-#ifndef _THOMAS_HPP_
-#define _THOMAS_HPP_
+#ifndef _CALGO_LSYS_THOMAS_HPP_
+#define _CALGO_LSYS_THOMAS_HPP_
 
 #include <vector>
 
-namespace nm::lsys {
+namespace ca::lsys {
 
 class Thomas {
 public:
@@ -17,4 +17,4 @@ public:
 
 }
 
-#endif // !_THOMAS_HPP_
+#endif // !_CALGO_LSYS_THOMAS_HPP_

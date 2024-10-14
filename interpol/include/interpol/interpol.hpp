@@ -1,9 +1,9 @@
-#ifndef _INTERPOL_HPP_
-#define _INTERPOL_HPP_
+#ifndef _CALGO_INTERPOL_HPP_
+#define _CALGO_INTERPOL_HPP_
 
 #include <vector>
 
-namespace nm {
+namespace ca::interpol {
 
 class Interpolation {
 public:
@@ -41,4 +41,4 @@ protected:
 
 }
 
-#endif // !_INTERPOL_HPP_
+#endif // !_CALGO_INTERPOL_HPP_

@@ -1,6 +1,6 @@
 #include <iomanip>
 #include <iostream>
-#include <thomas.hpp>
+#include <lsys/thomas.hpp>
 
 bool comp(
 	const std::vector<double>& a, 
@@ -25,7 +25,7 @@ int main() {
 	d = {7, 3, 9, 4, 5};
 
 	std::vector<double> 
-	sol = nm::lsys::Thomas::solve(a, b, c, d),
+	sol = ca::lsys::Thomas::solve(a, b, c, d),
 	expect = {635/1992.0, 563/996.0, -199/498.0, 2713/996.0, -589/332.0};
 
 	std::cout << "expected: ";

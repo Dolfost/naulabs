@@ -1,7 +1,7 @@
 #include <interpol/newtonBackward.hpp>
 #include <iostream>
 
-namespace nm {
+namespace ca::interpol {
 
 void NewtonBackward::setX(ListT x) {
 	Interpolation::setX(x);

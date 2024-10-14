@@ -1,6 +1,9 @@
+#ifndef _CALGO_INTERPOL_LAGRANGE_
+#define _CALGO_INTERPOL_LAGRANGE_
+
 #include <interpol/interpol.hpp>
 
-namespace nm {
+namespace ca::interpol {
 
 class Lagrange: public Interpolation {
 public:
@@ -15,3 +18,5 @@ protected:
 };
 
 }
+
+#endif // !_CALGO_INTERPOL_LAGRANGE_

@@ -4,7 +4,7 @@
 #include <algorithm>
 #include <cmath>
 
-namespace nm {
+namespace ca::interpol {
 
 void Cubic::setX(ListT x) {
 	Interpolation::setX(x);
@@ -21,7 +21,7 @@ void Cubic::calculateM() {
 		l[i] = (i_y[i+2] - i_y[i+1])/h(i+1) - (i_y[i+1] - i_y[i])/h(i+1);
 	}
 
-	ListT sol = nm::lsys::Thomas::solve(a, b, a, l); // c = a
+	ListT sol = ca::lsys::Thomas::solve(a, b, a, l); // c = a
 
 	n_M.clear();
 	n_M.push_back(0);

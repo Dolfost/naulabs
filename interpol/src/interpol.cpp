@@ -1,7 +1,7 @@
 #include <cmath>
 #include <interpol/interpol.hpp>
 
-namespace nm {
+namespace ca::interpol {
 
 Interpolation::ListT Interpolation::uniformNodes(double a, double b, std::size_t n) {
 	double step = std::abs(a-b)/(n-1);

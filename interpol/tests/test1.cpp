@@ -19,7 +19,7 @@ bool comp(
 int main() {
 
 	std::vector<double> 
-	sol = nm::Interpolation::chebyshevNodes(0, 10, 5),
+	sol = ca::interpol::Interpolation::chebyshevNodes(0, 10, 5),
 	expect = {0.245, 2.06, 5, 7.94, 9.76};
 
 	std::cout << "expected: ";

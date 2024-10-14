@@ -1,7 +1,6 @@
 #include "thomas.hpp"
-#include <vector>
 
-namespace nm::lsys {
+namespace ca::lsys {
 
 std::vector<double> Thomas::solve(
 	const std::vector<double>& a,

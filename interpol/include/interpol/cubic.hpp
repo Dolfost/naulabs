@@ -1,6 +1,9 @@
+#ifndef _CALGO_CUBIC_INTERPOL_HPP_
+#define _CALGO_CUBIC_INTERPOL_HPP_
+
 #include <interpol/interpol.hpp>
 
-namespace nm {
+namespace ca::interpol {
 
 class Cubic: public Interpolation {
 public:
@@ -16,3 +19,5 @@ protected:
 };
 
 }
+
+#endif // !_CALGO_CUBIC_INTERPOL_HPP_

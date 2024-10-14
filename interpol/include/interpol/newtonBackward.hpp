@@ -1,6 +1,9 @@
+#ifndef _CALGO_INTERPOL_NEWTON_BACKWARD_
+#define _CALGO_INTERPOL_NEWTON_BACKWARD_
+
 #include <interpol/interpol.hpp>
 
-namespace nm {
+namespace ca::interpol {
 
 class NewtonBackward: public Interpolation {
 public:
@@ -16,3 +19,5 @@ protected:
 };
 
 }
+
+#endif // !_CALGO_INTERPOL_NEWTON_BACKWARD_
