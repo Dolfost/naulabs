@@ -5,9 +5,9 @@
 
 namespace ca::interpol {
 
-class NewtonBackward: public Interpolation {
+class NewtonBackward: public ExplicitInterpolation {
 public:
-	using Interpolation::Interpolation;
+	using ExplicitInterpolation::Interpolation;
 
 	virtual void setX(ListT x) override;
 

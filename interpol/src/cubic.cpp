@@ -7,18 +7,18 @@
 namespace ca::interpol {
 
 void Cubic::setX(ListT x) {
-	Interpolation::setX(x);
+	ExplicitInterpolation::setX(x);
 	calculateM();
 }
 
 void Cubic::calculateM() {
 	ListT a(i_n - 3), b(i_n - 2), l(i_n - 2); // c = a
 	for (std::size_t i = 0; i < i_n - 3; i++)
-		a[i] = h(i+2)/6;
+		a[i] = hx(i+2)/6;
 
 	for (std::size_t i = 0; i < i_n - 2; i++) {
-		b[i] = (h(i+1) + h(i+2))/3;
-		l[i] = (i_y[i+2] - i_y[i+1])/h(i+1) - (i_y[i+1] - i_y[i])/h(i+1);
+		b[i] = (hx(i+1) + hx(i+2))/3;
+		l[i] = (i_y[i+2] - i_y[i+1])/hx(i+1) - (i_y[i+1] - i_y[i])/hx(i+1);
 	}
 
 	ListT sol = ca::lsys::Thomas::solve(a, b, a, l); // c = a
@@ -34,7 +34,7 @@ double Cubic::interpolate(double x) {
 		i_x.begin(), i_x.end(), x, std::less_equal{}
 	);
 	std::size_t i = std::distance(i_x.begin(), it);
-	double hi = h(i);
+	double hi = hx(i);
 
 	return n_M[i-1]*std::pow(i_x[i] - x, 3)/(6*hi) +
 		n_M[i]*std::pow(x - i_x[i-1], 3)/(6*hi) + 

@@ -5,14 +5,14 @@
 
 namespace ca::interpol {
 
-class Cubic: public Interpolation {
+class Cubic: public ExplicitInterpolation {
 public:
-	using Interpolation::Interpolation;
+	using ExplicitInterpolation::Interpolation;
 
 	virtual void setX(ListT x) override;
 
 	virtual double interpolate(double x) override;
-	const ListT& dividedDifference = n_M;
+	const ListT& m = n_M;
 protected:
 	ListT n_M;
 	void calculateM();

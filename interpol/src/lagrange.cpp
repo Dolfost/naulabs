@@ -4,7 +4,7 @@ namespace ca::interpol {
 
 void Lagrange
 ::setX(ListT x) {
-	Interpolation::setX(x);
+	ExplicitInterpolation::setX(x);
 	calculateL();
 }
 

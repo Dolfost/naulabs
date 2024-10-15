@@ -5,9 +5,9 @@
 
 namespace ca::interpol {
 
-class Lagrange: public Interpolation {
+class Lagrange: public ExplicitInterpolation {
 public:
-	using Interpolation::Interpolation;
+	using ExplicitInterpolation::Interpolation;
 
 	virtual void setX(ListT x) override;
 
