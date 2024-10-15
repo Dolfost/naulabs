@@ -2,7 +2,7 @@
 
 namespace ca::lsys {
 
-std::vector<double> Thomas::solve(
+ListT Thomas::solve(
 		const ListT& a,
 		const ListT& b,
 		const ListT& c,
@@ -10,8 +10,8 @@ std::vector<double> Thomas::solve(
 ) {
 	std::size_t N = b.size();
 
-	std::vector<double> c_star(N);
-	std::vector<double> d_star(N);
+	ListT c_star(N);
+	ListT d_star(N);
 
 	c_star[0] = c[0] / b[0];
 	d_star[0] = d[0] / b[0];
@@ -22,7 +22,7 @@ std::vector<double> Thomas::solve(
 		d_star[i] = (d[i] - a[i-1]*d_star[i-1])/m;
 	}
 
-	std::vector<double> x(N);
+	ListT x(N);
 	x.back() = d_star.back();
 	for (int i = N-2; i >= 0; i--) {
 		x[i] = d_star[i] - c_star[i] * x[i+1];

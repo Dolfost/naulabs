@@ -1,11 +1,11 @@
-#ifndef _CALGO_LSYS_THOMAS_HPP_
-#define _CALGO_LSYS_THOMAS_HPP_
+#ifndef _CALGO_LSYS_CYCLIC_THOMAS_HPP_
+#define _CALGO_LSYS_CYCLIC_THOMAS_HPP_
 
 #include <calgo/calgo.hpp>
 
 namespace ca::lsys {
 
-class Thomas {
+class CyclicThomas {
 public:
 	static ListT solve(
 		const ListT&,
@@ -17,4 +17,4 @@ public:
 
 }
 
-#endif // !_CALGO_LSYS_THOMAS_HPP_
+#endif // !_CALGO_LSYS_CYCLIC_THOMAS_HPP_
