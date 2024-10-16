@@ -29,6 +29,13 @@ double CubicParametric::calculateS(double t, ListT& ms, ListT& il) {
 	ti %= i_n;
 	ti++;
 
+	if (ti == 0)
+		return ms[i_n]*std::pow(ti - t, 3)/6 +
+		ms[ti]*std::pow(t - (i_n), 3)/6 + 
+		(il[i_n-1] - ms[i_n-1]/6)*(ti - t) +
+		(il[ti] - ms[ti]/6)*(t - (i_n));
+
+
 	return ms[ti-1]*std::pow(ti - t, 3)/6 +
 	ms[ti]*std::pow(t - (ti-1), 3)/6 + 
 	(il[ti-1] - ms[ti-1]/6)*(ti - t) +
