@@ -24,21 +24,21 @@ void CubicParametric::calculateMs() {
 	n_My = ca::lsys::CyclicThomas::solve(a, b, a, fy); // c = a
 }
 
-double CubicParametric::calculateS(double t, ListT& ms, ListT& il) {
-	std::size_t ti = static_cast<std::size_t>(t);
-	ti %= i_n;
+double CubicParametric::calculateS(double t, ListT& m, ListT& f) {
+	long long i = static_cast<long long>(t);
+	i %= i_n;
 
-	// if (ti == 0)
-	// 	return ms[i_n]*std::pow(ti - t, 3)/6 +
-	// 	ms[ti]*std::pow(t - (i_n), 3)/6 + 
-	// 	(il[i_n-1] - ms[i_n-1]/6)*(ti - t) +
-	// 	(il[ti] - ms[ti]/6)*(t - (i_n));
+	if (i == 0)
+		return m[i_n-1]*std::pow(i - t, 3)/6 +
+		m[i]*std::pow(t - (i_n-1), 3)/6 + 
+		(f[i_n-1] - m[i_n-1]/6)*(i - t) +
+		(f[i] - m[i]/6)*(t - (i_n));
 
 
-	return ms[ti-1]*std::pow(ti - t, 3)/6 +
-	ms[ti]*std::pow(t - (ti-1), 3)/6 + 
-	(il[ti-1] - ms[ti-1]/6)*(ti - t) +
-	(il[ti] - ms[ti]/6)*(t - (ti-1));
+	return m[i-1]*std::pow(i - t, 3)/6 +
+	m[i]*std::pow(t - (i-1), 3)/6 + 
+	(f[i-1] - m[i-1]/6)*(i - t) +
+	(f[i] - m[i]/6)*(t - (i-1));
 }
 	
 }
