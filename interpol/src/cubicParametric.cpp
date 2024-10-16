@@ -11,13 +11,13 @@ void CubicParametric::setX(ListT x) {
 void CubicParametric::calculateMs() {
 	ListT a(i_n, 1.0/6.0), b(i_n, 2.0/3.0), fx(i_n), fy(i_n); // c = a
 	
-	fx[0] = fx[1] - fx[0] - (fx[0] - fx[i_n-1]);
-	fy[0] = fy[1] - fy[0] - (fy[0] - fy[i_n-1]);
-	fx[i_n-1] = fx[0] - fx[i_n-1] - (fx[i_n-1] - fx[i_n-2]);
-	fy[i_n-1] = fy[0] - fy[i_n-1] - (fy[i_n-1] - fy[i_n-2]);
+	fx[0] = i_x[1] - 2*i_x[0] + i_x[i_n-1];
+	fy[0] = i_y[1] - 2*i_y[0] + i_y[i_n-1];
+	fx[i_n-1] = i_x[0] - 2*i_x[i_n-1] + i_x[i_n-2];
+	fy[i_n-1] = i_y[0] - 2*i_y[i_n-1] + i_y[i_n-2];
 	for (std::size_t i = 1; i < i_n - 1; i++) {
-		fx[i] = i_x[i+1] - i_x[i] - (i_x[i] - i_x[i-1]);
-		fy[i] = i_y[i+1] - i_y[i] - (i_y[i] - i_y[i-1]);
+		fx[i] = i_x[i+1] - 2*i_x[i] + i_x[i-1];
+		fy[i] = i_y[i+1] - 2*i_y[i] + i_y[i-1];
 	}
 
 	n_Mx = ca::lsys::CyclicThomas::solve(a, b, a, fx); // c = a
