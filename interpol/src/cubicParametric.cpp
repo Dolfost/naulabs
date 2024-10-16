@@ -24,20 +24,15 @@ void CubicParametric::calculateMs() {
 	n_My = ca::lsys::CyclicThomas::solve(a, b, a, fy); // c = a
 }
 
-std::pair<double, double> CubicParametric::interpolate(double t) {
+double CubicParametric::calculateS(double t, ListT& ms, ListT& il) {
 	std::size_t ti = static_cast<std::size_t>(t);
 	ti %= i_n;
+	ti++;
 
-	return {
-		n_Mx[ti-1]*std::pow(ti - t, 3)/6 +
-		n_Mx[ti]*std::pow(t - (ti-1), 3)/6 + 
-		(i_x[ti-1] - n_Mx[ti-1]/6)*(ti - t) +
-		(i_x[ti] - n_Mx[ti]/6)*(t - (ti-1)),
-		n_My[ti-1]*std::pow(ti - t, 3)/6 +
-		n_My[ti]*std::pow(t - (ti-1), 3)/6 + 
-		(i_y[ti-1] - n_My[ti-1]/6)*(ti - t) +
-		(i_y[ti] - n_My[ti]/6)*(t - (ti-1)),
-	};
+	return ms[ti-1]*std::pow(ti - t, 3)/6 +
+	ms[ti]*std::pow(t - (ti-1), 3)/6 + 
+	(il[ti-1] - ms[ti-1]/6)*(ti - t) +
+	(il[ti] - ms[ti]/6)*(t - (ti-1));
 }
 	
 }

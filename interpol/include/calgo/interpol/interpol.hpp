@@ -43,8 +43,9 @@ class ParametricInterpolation: public Interpolation {
 public:
 	using Interpolation::Interpolation;
 
-	virtual std::pair<double, double> interpolate(double t) = 0;
-	std::pair<double, double> operator()(double t) { return interpolate(t); };
+	virtual double interpolateX(double t) = 0;
+	virtual double interpolateY(double t) = 0;
+	std::pair<double, double> operator()(double t) { return {interpolateX(t), interpolateY(t)}; };
 };
 
 class Nodes {

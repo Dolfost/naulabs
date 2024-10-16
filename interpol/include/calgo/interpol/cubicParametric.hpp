@@ -11,13 +11,15 @@ public:
 
 	virtual void setX(ListT x) override;
 
-	virtual std::pair<double, double> interpolate(double t) override;
-
 	const ListT& mx = n_Mx;
 	const ListT& my = n_My;
+	double interpolateX(double t) override { return calculateS(t, n_Mx, i_x); };
+	double interpolateY(double t) override { return calculateS(t, n_My, i_y); };
+
 protected:
 	ListT n_Mx, n_My;
 	void calculateMs();
+	double calculateS(double, ListT&, ListT&);
 };
 
 }
