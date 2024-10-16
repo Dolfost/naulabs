@@ -27,7 +27,6 @@ void CubicParametric::calculateMs() {
 double CubicParametric::calculateS(double t, ListT& ms, ListT& il) {
 	std::size_t ti = static_cast<std::size_t>(t);
 	ti %= i_n;
-	ti++;
 
 	if (ti == 0)
 		return ms[i_n]*std::pow(ti - t, 3)/6 +
