@@ -28,11 +28,11 @@ double CubicParametric::calculateS(double t, ListT& m, ListT& f) {
 	long long i = static_cast<long long>(t);
 	i %= i_n;
 
-	// if (i == 0)
-	// 	return m[i_n-1]*std::pow(i - t, 3)/6 +
-	// 	m[i]*std::pow(t - (i_n-1), 3)/6 + 
-	// 	(f[i_n-1] - m[i_n-1]/6)*(i - t) +
-	// 	(f[i] - m[i]/6)*(t - (i_n));
+	if (i == 0)
+		return m[i_n-1]*std::pow(i - t, 3)/6 +
+		m[i]*std::pow(t - (i_n-1), 3)/6 + 
+		(f[i_n-1] - m[i_n-1]/6)*(i - t) +
+		(f[i] - m[i]/6)*(t - (i_n));
 
 
 	return m[i-1]*std::pow(i - t, 3)/6 +
