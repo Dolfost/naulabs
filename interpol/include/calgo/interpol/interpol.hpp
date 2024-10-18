@@ -13,8 +13,10 @@ public:
 
 	virtual void setX(ListT x) { i_x = x; i_n = i_x.size(); };
 	virtual void setY(ListT y) { i_y = y; };
+
 	ListT x() { return i_x; };
 	ListT y() { return i_y; };
+	virtual std::size_t n() { return i_n; };
 
 	virtual ~Interpolation() {};
 
