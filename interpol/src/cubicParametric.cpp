@@ -1,6 +1,5 @@
 #include <calgo/interpol/cubicParametric.hpp>
 #include <calgo/lsys/cyclicThomas.hpp>
-#include <iostream>
 
 namespace ca::interpol {
 
@@ -29,7 +28,6 @@ double CubicParametric::calculateS(double t, ListT& m, ListT& f) {
 	long long i = static_cast<long long>(t);
 	i %= (i_n);
 	t = std::fmod(t, i_n);
-	std::cout << i << " " << i_n  << " " << t << std::endl;
 	long long ti = i+1;
 
 	if (i == 0)
