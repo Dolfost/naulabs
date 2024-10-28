@@ -7,15 +7,14 @@ double Simpson::integrate() {
 
 	double step = h(0);
 
-	double sum_odds = 0.0;
-	for (int i = 1; i < n; i += 2) {
-		sum_odds += s_y[i];
-	}
-	double sum_evens = 0.0;
-	for (int i = 2; i < n; i += 2) {
-		sum_evens += s_y[i];
-	}
+	double odd = 0.0;
+	for (int i = 1; i < n; i += 2)
+		odd += s_y[i];
 
-	return (s_y.front() + s_y.back() + 2 * sum_evens + 4 * sum_odds) * step / 3;}
+	double even = 0.0;
+	for (int i = 2; i < n; i += 2)
+		even += s_y[i];
+
+	return (s_y.front() + s_y.back() + 2 * even + 4 * odd) * step / 3;}
 }
 
