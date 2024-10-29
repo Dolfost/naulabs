@@ -15,6 +15,7 @@ double Simpson::integrate() {
 	for (int i = 2; i < n; i += 2)
 		even += s_y[i];
 
-	return (s_y.front() + s_y.back() + 2 * even + 4 * odd) * step / 3;}
+	return (s_y.front() + s_y.back() + 2 * even + 4 * odd) * step / 3;
+}
 
 }
